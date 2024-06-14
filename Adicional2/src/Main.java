@@ -47,25 +47,32 @@ public class Main {
     }
 
     private static void altaSparePart() {
-        int codigo = getIntInput("Introduzca el código de la SparePart: ");
-        String descripcion = getStringInput("Introduzca la descripción de la SparePart: ");
-        double precio = getDoubleInput("Introduzca el precio de la SparePart: ");
+    	System.out.println("Introduzca el código de la SparePart: ");
+    	int codigo = Integer.valueOf(sc.nextLine());
+    	System.out.println("Introduzca la descripción de la SparePart: ");
+    	String descripcion = sc.nextLine();
+    	System.out.println("Introduzca el precio de la SparePart: ");
+    	double precio = Double.valueOf(sc.nextLine());
         SparePart sparePart = new SparePart(codigo, descripcion, precio);
         System.out.println("SparePart dada de alta correctamente:");
         System.out.println(sparePart);
     }
 
     private static void altaComponent() {
-        int codigo = getIntInput("Ingrese el código del Component: ");
-        String descripcion = getStringInput("Introduzca la descripción del Component: ");
-        double precio = getDoubleInput("Introduzca el precio del Component: ");
+    	System.out.println("Introduzca el código del componente: ");
+    	int codigo = Integer.valueOf(sc.nextLine());
+    	System.out.println("Introduzca la descripción del componente: ");
+    	String descripcion = sc.nextLine();
+    	System.out.println("Introduzca el precio del componente: ");
+    	double precio = Double.valueOf(sc.nextLine());
         componente = new Component(codigo, descripcion, precio);
         System.out.println("Componente dado de alta correctamente:");
         System.out.println(componente);
     }
 
     private static void buscarPieza() {
-        int codigo = getIntInput("Introduzca el código de la pieza que desea buscar: ");
+        System.out.println("Introduzca el código de la pieza que desea buscar: ");
+        int codigo = Integer.valueOf(sc.nextLine());
         if (componente != null && componente.getCode() == codigo) {
             System.out.println("Pieza encontrada:");
             System.out.println(componente);
@@ -99,7 +106,7 @@ public class Main {
             file.write(jsonComponente.toString());
             System.out.println("JSON generado y guardado correctamente.");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -127,21 +134,5 @@ public class Main {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
-
-    private static int getIntInput(String message) {
-        System.out.print(message);
-        return sc.nextInt();
-    }
-
-    private static double getDoubleInput(String message) {
-        System.out.print(message);
-        return sc.nextDouble();
-    }
-
-    private static String getStringInput(String message) {
-        System.out.println(message);
-        sc.nextLine();
-        return sc.nextLine();
     }
 }
