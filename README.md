@@ -1,1 +1,1 @@
-Los proyectos relacionados con ficheros de todo el curso corregidos
+Los proyectos relacionados con ficheros y algunos de agregación/composición corregidos
